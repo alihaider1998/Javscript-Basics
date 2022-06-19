@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/NavbarStyles.css">
+    <link rel="stylesheet" href="./styles/Question4Styles.css">
+    <script src="scripts.js" defer></script>
+    <title>Sportradar Test</title>
+</head>
+
+<body>
+    <my-header></my-header>
+    <h1 class="tvshowHeading">TV Shows</h1>
+    <div class="tableBtns">
+        <button class="btn" onclick="getSortedShows()"
+            title="Sort Shows by Scores and By Ratings if Scores are Equal">Click Here to Sort the Shows By
+            Scores</button>
+        <button class="btn" onclick="getHighestShow()" title="Highest Scoring Show">Click Here to Get Highest Scoring
+            Show</button>
+        <button class="btn" onclick="getSecondHighest()" title="Second Highest Scoring Show">Click Here to Get Second
+            Highest Show</button>
+    </div>
+    <table class="container">
+        <thead>
+            <tr>
+                <th>
+                    <h1>Title</h1>
+                </th>
+                <th>
+                    <h1>Score</h1>
+                </th>
+                <th>
+                    <h1>Ratings</h1>
+                </th>
+            </tr>
+        </thead>
+        <tbody id="myTable">
+        </tbody>
+    </table>
+</body>
+
+</html>

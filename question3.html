@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color the box</title>
+    <link rel="stylesheet" href="./styles/NavbarStyles.css">
+    <script src="scripts.js" defer></script>
+    <title>Sportradar Test</title>
+    <style>
+        #color-box {
+            transition: 1s background-color;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <my-header></my-header>
+    <h1>Color the box using Promise</h1>
+    <div id="color-box"></div>
+    <script>
+        const changeColorAfter = () => {
+            // Write your code here
+            function firstFunc() {
+                return new Promise((resolve, reject) => setTimeout((() => { document.getElementById("color-box").style.backgroundColor = "red", resolve() }), 1000))
+            }
+            async function secFunc() {
+                await firstFunc();
+                return new Promise((resolve, reject) => setTimeout((() => { document.getElementById("color-box").style.backgroundColor = "orange", resolve() }), 2000));
+            };
+            async function thirdFunc() {
+                await secFunc();
+                return new Promise((resolve, reject) => setTimeout((() => { document.getElementById("color-box").style.backgroundColor = "yellow", resolve() }), 3000));
+            };
+            async function fourthFunc() {
+                await thirdFunc();
+                return new Promise((resolve, reject) => setTimeout((() => { document.getElementById("color-box").style.backgroundColor = "green", resolve() }), 1000));
+            };
+            async function fifthFunc() {
+                await fourthFunc();
+                return new Promise((resolve, reject) => setTimeout((() => { document.getElementById("color-box").style.backgroundColor = "blue", resolve() }), 4000));
+            };
+            async function sixthFunc() {
+                await fifthFunc();
+                return new Promise((resolve, reject) => setTimeout((() => { document.getElementById("color-box").style.backgroundColor = "indigo", resolve() }), 5000));
+            };
+            sixthFunc();
+
+        }
+        changeColorAfter();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="./styles/NavbarStyles.css">
+  <script src="scripts.js" defer></script>
+  <title>Sportradar Test</title>
+</head>
+
+<body>
+  <my-header></my-header>
+  <div class="boxClass">
+    <div oncontextmenu="{return alert('Right click not allowed.')|| false} " class="boxes">
+      <h1 id="first"></h1>
+    </div>
+    <div onmousedown="disableLeft()" class="boxes">
+      <h1 id="second"></h1>
+    </div>
+  </div>
+</body>
+
+</html>
+<script>
+  mywidth = document.getElementById("first");
+  myheight = document.getElementById("second");
+
+  function reportWindowSize() {
+    mywidth.innerHTML = `Width: ${window.innerWidth}`;
+    myheight.innerHTML = `Height: ${window.innerHeight}`;
+  }
+  window.onresize = reportWindowSize;
+  window.onload = reportWindowSize;
+
+  disableLeft = () => { if (event.button == 0) { alert("Left click not allowed."); false } }
+</script>

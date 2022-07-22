@@ -26,33 +26,15 @@
         const changeColorAfter = (delay, color) => {
             // Write your code here
             return new Promise((resolve, reject) => {
-                setTimeout(() => resolve(color), delay);
+                setTimeout(() => { document.getElementById("color-box").style.backgroundColor = color; resolve(color) }, delay);
             })
         }
         changeColorAfter(1000, 'red')
-            .then((color) => {
-                document.getElementById("color-box").style.backgroundColor = color;
-            })
             .then(() => changeColorAfter(2000, 'orange'))
-            .then((color) => {
-                document.getElementById("color-box").style.backgroundColor = color;
-            })
             .then(() => changeColorAfter(3000, 'yellow'))
-            .then((color) => {
-                document.getElementById("color-box").style.backgroundColor = color;
-            })
             .then(() => changeColorAfter(1000, 'green'))
-            .then((color) => {
-                document.getElementById("color-box").style.backgroundColor = color;
-            })
             .then(() => changeColorAfter(4000, 'blue'))
-            .then((color) => {
-                document.getElementById("color-box").style.backgroundColor = color;
-            })
             .then(() => changeColorAfter(5000, 'indigo'))
-            .then((color) => {
-                document.getElementById("color-box").style.backgroundColor = color;
-            })
     </script>
 </body>
 

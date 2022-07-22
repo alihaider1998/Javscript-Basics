@@ -38,11 +38,11 @@ customElements.define('my-header',MyHeader)
     }];
     //Rendering Unsorted Array on page mount/load
     const buildTable = (data) => {
-        var table = document.getElementById('myTable')
+        let table = document.getElementById('myTable')
         if(table){ 
 
-        for (var i = 0; i < data.length; i++) {
-            var row = `<tr>
+        for (let i = 0; i < data.length; i++) {
+            let row = `<tr>
 							<td>${data[i].title}</td>
 							<td>${data[i].score}</td>
 							<td>${data[i].numRatings}</td>
@@ -65,11 +65,11 @@ customElements.define('my-header',MyHeader)
     };
     //Rendering Sorted Scores
     const getSortedShows = () => {
-        var table = document.getElementById('myTable')
+        let table = document.getElementById('myTable')
         table.innerHTML = "";
         let highestShows = tvShows.sort(doSort);
-        for (var i = 0; i < highestShows.length; i++) {
-            var row = `<tr>
+        for (let i = 0; i < highestShows.length; i++) {
+            let row = `<tr>
 							<td>${highestShows[i].title}</td>
 							<td>${highestShows[i].score}</td>
 							<td>${highestShows[i].numRatings}</td>
@@ -89,10 +89,10 @@ customElements.define('my-header',MyHeader)
     };
     //Rendering Highest Scoring show from "highest" function defined above
     getHighestShow = () => {
-        var table = document.getElementById('myTable')
+        let table = document.getElementById('myTable')
         table.innerHTML = "";
         let x = tvShows.reduce(highest, {});
-        var row = `<tr>
+        let row = `<tr>
 							<td>${x.title}</td>
 							<td>${x.score}</td>
 							<td>${x.numRatings}</td>
@@ -105,9 +105,9 @@ customElements.define('my-header',MyHeader)
         let sortedShows = tvShows.sort(doSort);
         let filteredArray = sortedShows.filter((item) => item.score < highestScored.score);
         //Now rendering it.
-        var table = document.getElementById('myTable')
+        let table = document.getElementById('myTable')
         table.innerHTML = "";
-        var row = `<tr>
+        let row = `<tr>
 							<td>${filteredArray[0].title}</td>
 							<td>${filteredArray[0].score}</td>
 							<td>${filteredArray[0].numRatings}</td>

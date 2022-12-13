@@ -9,6 +9,9 @@
 
 <body>
   <my-header></my-header>
+  <h1>DOM Manipulation</h1>
+  <h1 style="color:darkslategrey">One box should display the width of the window and right-click should be disabled(no menu should be shown on right click) and alert if there is an attempt to do so. The other box should display the height of the window and left-click should be disabled. Give an alert if attempted. The height and width must be updated as the window is resized.</h1>
+
   <div class="boxClass">
     <div oncontextmenu="{return alert('Right click not allowed.')|| false} " class="boxes">
       <h1 id="first"></h1>

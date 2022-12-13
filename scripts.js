@@ -3,7 +3,7 @@ class MyHeader extends HTMLElement{
   connectedCallback(){
     this.innerHTML=`
     <ul>
-    <li><a href="home.html">Question 1</a></li>
+    <li><a href="index.html">Question 1</a></li>
     <li><a href="question2.html">Question 2</a></li>
     <li><a href="question3.html">Question 3</a></li>
     <li><a href="question4.html">Question 4</a></li>
